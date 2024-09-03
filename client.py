@@ -1,4 +1,3 @@
-# import required modules
 import socket
 import threading
 import tkinter as tk
@@ -16,9 +15,6 @@ FONT = ("Helvetica", 17)
 BUTTON_FONT = ("Helvetica", 15)
 SMALL_FONT = ("Helvetica", 13)
 
-# Creating a socket object
-# AF_INET: we are going to use IPv4 addresses
-# SOCK_STREAM: we are using TCP packets for communication
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def add_message(message):
@@ -28,10 +24,8 @@ def add_message(message):
 
 def connect():
 
-    # try except block
     try:
 
-        # Connect to the server
         client.connect((HOST, PORT))
         print("Successfully connected to server")
         add_message("[SERVER] Successfully connected to the server")
@@ -109,7 +103,6 @@ def listen_for_messages_from_server(client):
         else:
             messagebox.showerror("Error", "Message recevied from client is empty")
 
-# main function
 def main():
 
     root.mainloop()
